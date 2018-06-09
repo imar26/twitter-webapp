@@ -6,7 +6,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
 // Styles
-import './App.css';
+import './app.scss';
 
 class App extends Component {
     render() {

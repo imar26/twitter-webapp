@@ -1,0 +1,22 @@
+header {
+    background-color: $white;
+    border-bottom: 1px solid $gray;
+    text-align: $center;
+    padding: 15px 0;
+    h3, p {
+        margin: 0;
+    }
+    h3 {
+        font-family: $montserrat;
+        font-size: $f20;
+        font-weight: $w700;
+        color: $theme;
+    }
+    p {
+        font-size: $f14;
+        line-height: 1.6;
+        font-style: italic;
+        font-weight: $w300;
+        color: $gray;
+    }
+}

@@ -1,0 +1,19 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+/* Import Main SCSS File */
+@import './styles/main.scss';
+
+/* Import Other SCSS File */
+@import './styles/header.scss';
+@import './styles/footer.scss';
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $roboto;
+    font-weight: $w400;
+    font-size: $f16;
+    line-height: 1.8;
+}
