@@ -8,12 +8,56 @@
 /* Import Other SCSS File */
 @import './styles/header.scss';
 @import './styles/footer.scss';
+@import './styles/search.scss';
 
 body {
-    margin: 0;
-    box-sizing: border-box;
+    margin: 0;    
     font-family: $roboto;
     font-weight: $w400;
     font-size: $f16;
+    color: $text;
     line-height: 1.8;
+    background-color: $body-bg;
+}
+
+*:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.form-group {
+    width: 25%;
+    float: $left;
+    @include box-sizing(border-box);
+    padding: 0 10px;
+    .form-control {
+        width: 100%;
+        padding: 8px 15px;
+        @include box-sizing(border-box);
+        @include border-radius(3px);
+        border: 1px solid $gray;
+    }
+    label {
+        font-size: $f12;
+        color: $text;        
+    }
+    button {
+        background: $theme;
+        margin: 0 10px;
+        border: 0;
+        padding: 10px 15px;
+        @include border-radius(3px);
+        cursor: pointer;
+        font-size: $f14;
+        &:hover {
+            background-color: $text;
+            color: $white;
+        }
+    }
 }

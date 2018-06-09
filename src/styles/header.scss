@@ -11,12 +11,13 @@ header {
         font-size: $f20;
         font-weight: $w700;
         color: $theme;
+        text-transform: uppercase;
     }
     p {
         font-size: $f14;
         line-height: 1.6;
         font-style: italic;
         font-weight: $w300;
-        color: $gray;
+        color: $text;
     }
 }

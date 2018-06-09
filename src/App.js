@@ -5,6 +5,9 @@ import React, { Component } from 'react';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
+// Container Imports
+import Search from './containers/search/Search';
+
 // Styles
 import './app.scss';
 
@@ -13,6 +16,7 @@ class App extends Component {
         return(
             <div>
                 <Header/>
+                <Search/>
                 <Footer/>
             </div>
         )
