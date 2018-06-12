@@ -64,8 +64,7 @@ class Search extends Component {
         }
 
         let number = this.refs.number.value;
-
-        if(number.replace(/\D/g,'') < 1 || number.replace(/\D/g,'') > 100) {
+        if(number.replace(/[^\d.-]/g,'') < 1 || number.replace(/[^\d.-]/g,'') > 100) {
             this.setState({
                 numError: true,
                 numMessage: 'Invalid number'
