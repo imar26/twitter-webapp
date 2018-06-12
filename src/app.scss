@@ -70,3 +70,10 @@ body {
 .btn-group {
     width: 20%;
 }
+
+.error {
+    color: $red;
+    font-size: $f12;
+    float: $left;
+    font-weight: $w500;
+}

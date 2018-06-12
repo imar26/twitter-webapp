@@ -18,10 +18,12 @@ class SearchService {
         return this[_singleton];
     }
 
-    searchTweets(data) {
+    searchTweets(data) {        
         if(process.env.NODE_ENV === 'development') {
+            // For Local
             this.baseUrl = "http://localhost:5000";
         } else {
+            // For Production
             this.baseUrl = "";
         }
 

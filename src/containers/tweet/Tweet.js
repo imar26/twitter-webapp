@@ -1,6 +1,9 @@
 // Imports
 import React, { Component } from 'react';
 
+// Import moment js
+import moment from 'moment';
+
 class Tweet extends Component {
     tweetText = '';
     constructor(props) {
@@ -19,6 +22,8 @@ class Tweet extends Component {
     }
 
     render() {
+        let date = this.props.tweet.created_at;
+        let dateFormat = moment(date).format('LL');
         return(
             <div className="clearfix tweet">
                 <div className="left-section">
@@ -29,7 +34,7 @@ class Tweet extends Component {
                     <p>{this.tweetText}</p>
                     <span><strong>Total Retweets:</strong> {this.props.tweet.retweet_count}</span>
                     <span><strong>Total Favourites:</strong> {this.props.tweet.favorite_count}</span>
-                    <span><strong>Tweeted at:</strong> {this.props.tweet.created_at}</span>
+                    <span><strong>Tweeted at:</strong> {dateFormat}</span>
                 </div>
             </div>
         )
