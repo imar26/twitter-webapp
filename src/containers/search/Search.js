@@ -121,7 +121,7 @@ class Search extends Component {
                             <label>Type of Tweets</label>
                         </div> */}
                         <div className="btn-group">
-                            <button type="submit">Search Tweets</button>
+                            <button type="submit"><i className="fa fa-search" aria-hidden="true"></i>Search Tweets</button>
                         </div>
                     </form>
                 </div>

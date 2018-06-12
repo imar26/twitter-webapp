@@ -1,7 +1,7 @@
 #search-section {
     padding: 15px 20px;
     border-bottom: 1px solid $gray;
-    background-color: $body-bg;
+    background-color: $search-bg;
     h4 {
         text-transform: uppercase;
         text-align: $center;
@@ -9,5 +9,6 @@
         margin-bottom: 10px;
         font-family: $montserrat;
         font-weight: $w700;
+        color: $white;
     }
 }

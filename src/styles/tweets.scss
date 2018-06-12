@@ -2,25 +2,31 @@
     background-color: #fff;
     padding: 15px 20px;
     .tweet-list {
-        padding-bottom: 30px;
+        padding-bottom: 50px;
     }
     h3 {
         font-family: $montserrat;
         font-weight: $w700;
         display: inline-block;
+        text-transform: uppercase;
     }
     .sorting {
         float: $right;
+        text-transform: uppercase;
     }
     select {
         background: $theme;
         border: 0;
         padding: 10px 15px;
         margin: 17px 0;
+        color: $white;
+        @include border-radius(3px);
     }
     .tweet { 
         border-top: 1px solid $gray;  
-        padding: 20px 0 10px;             
+        padding: 20px 0 10px;  
+        background-color: $search-bg;
+        color: $white;           
         .left-section, .right-section {
             float: $left;
         }
@@ -31,10 +37,14 @@
                 width: 200px;
                 height: 200px;
                 object-fit: cover;
+                border: 1px solid $white;
+                box-sizing: border-box;
             }
         }
         .right-section {
             width: 80%;
+            padding: 0 15px;
+            box-sizing: border-box;
             h4 {
                 margin: 0;
                 span {
@@ -44,6 +54,16 @@
             }
             span {
                 display: block;
+                i {
+                    padding: 0 5px;
+                }
+                &.calendar {
+                    float: $right;
+                }
+                &.retweet, &.favourite {
+                    float: $left;
+                    margin-right: 15px;
+                }
             }
         }
     }

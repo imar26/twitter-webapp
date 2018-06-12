@@ -2,8 +2,10 @@ footer {
     padding: 5px 0;
     text-align: $center;
     color: $white;
-    background-color: $gray;
+    background-color: $header-bg;
     position: fixed;
     width: 100%;
     bottom: 0;
+    font-size: $f14;
+    line-height: 1.6;
 }

@@ -46,7 +46,7 @@ body {
     }
     label {
         font-size: $f12;
-        color: $text;  
+        color: $white;  
         float: $right;    
         text-align: $right;  
         width: 50%;
@@ -60,8 +60,9 @@ body {
         cursor: pointer;
         font-size: $f14;
         width: 100%;
+        color: $white;
         &:hover {
-            background-color: $text;
+            background-color: $header-bg;
             color: $white;
         }
     }
@@ -76,4 +77,8 @@ body {
     font-size: $f12;
     float: $left;
     font-weight: $w500;
+}
+
+i {
+    padding: 0 10px;
 }
