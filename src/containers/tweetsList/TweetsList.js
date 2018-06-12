@@ -5,10 +5,6 @@ import React, { Component } from 'react';
 import Tweet from '../tweet/Tweet';
 
 class TweetsList extends Component {
-    constructor(props) {
-        super(props);               
-    }
-
     sortTweets() {
         let sortValue = this.refs.sortValue.value;
 
