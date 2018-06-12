@@ -7,33 +7,47 @@ import Footer from './components/footer/Footer';
 
 // Container Imports
 import Search from './containers/search/Search';
-import Tweets from './containers/tweets/Tweets';
+import TweetsList from './containers/tweetsList/TweetsList';
 
 // Styles
 import './app.scss';
 
+// Main app component
 class App extends Component {
+    // Empty array declared for the tweets
     tweets = [];
     constructor() {
         super();
-
+        // Define state, sort value is date by default
         this.state = {
-            tweets: this.tweets
-        }
+            tweets: this.tweets,
+            sort: 'date'
+        };
     }
 
+    // When tweets are sorted
+    sortTweets(tweetlist, sort) {
+        this.setState({
+            tweets: tweetlist,
+            sort: sort
+        });
+    }
+
+    // When user requests for new tweets (changes the input field)
     getTweets(tweetlist) {
         this.setState({
-            tweets: tweetlist
-        })
+            tweets: tweetlist,
+            sort: 'date'
+        });
     }
 
+    // Renders the UI
     render() {
         return(
             <div>
                 <Header/>
                 <Search getTweets={this.getTweets.bind(this)}/>
-                <Tweets tweets={this.state.tweets}/>
+                <TweetsList tweets={this.state.tweets} sortTweets={this.sortTweets.bind(this)} sort={this.state.sort} />
                 <Footer/>
             </div>
         )

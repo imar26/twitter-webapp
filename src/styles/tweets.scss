@@ -1,4 +1,49 @@
 #tweets-section {
     background-color: #fff;
     padding: 15px 20px;
+    .tweet-list {
+        padding-bottom: 30px;
+    }
+    h3 {
+        font-family: $montserrat;
+        font-weight: $w700;
+        display: inline-block;
+    }
+    .sorting {
+        float: $right;
+    }
+    select {
+        background: $theme;
+        border: 0;
+        padding: 10px 15px;
+        margin: 17px 0;
+    }
+    .tweet { 
+        border-top: 1px solid $gray;  
+        padding: 20px 0 10px;             
+        .left-section, .right-section {
+            float: $left;
+        }
+        .left-section {
+            width: 20%;
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+        .right-section {
+            width: 80%;
+            h4 {
+                margin: 0;
+                span {
+                    display: inline;
+                    color: $theme;
+                }
+            }
+            span {
+                display: block;
+            }
+        }
+    }
 }

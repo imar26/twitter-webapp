@@ -3,4 +3,7 @@ footer {
     text-align: $center;
     color: $white;
     background-color: $gray;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

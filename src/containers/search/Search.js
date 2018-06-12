@@ -22,7 +22,7 @@ class Search extends Component {
         let searchValue = "";
         for(let i=0; i<hashtagArray.length; i++) {
             if(i === hashtagArray.length - 1) {
-                searchValue += hashtagArray[i] + ' -RT';
+                searchValue += hashtagArray[i]; // + ' -RT'
             } else {
                 searchValue += hashtagArray[i] + ' OR ';
             }
@@ -52,13 +52,13 @@ class Search extends Component {
                     <h4>Search Tweets</h4>
                     <form id="searchForm" className="clearfix" onSubmit={this.searchTweets.bind(this)}>
                         <div className="form-group">
-                            <input type="text" ref="hashtags" placeholder="Enter Hashtags" className="form-control" />
+                            <input type="text" ref="hashtags" placeholder="Enter Hashtags" className="form-control" required />
                             <label>Format: #hashtag1 #hashtag2</label>
                         </div>
                         <div className="form-group">
                             <input type="number" ref="number" placeholder="Enter Number of Tweets" className="form-control" 
-                            defaultValue="15" min="1" max="100" />
-                            <label>Number of Tweets (Default: 15, Max: 100)</label>
+                            defaultValue="15" min="1" max="100" required />
+                            <label>Number of Tweets (Max: 100)</label>
                         </div>
                         {/* <div className="form-group">
                             <select className="form-control">
@@ -68,7 +68,7 @@ class Search extends Component {
                             </select>
                             <label>Type of Tweets</label>
                         </div> */}
-                        <div className="form-group">
+                        <div className="btn-group">
                             <button type="submit">Search Tweets</button>
                         </div>
                     </form>

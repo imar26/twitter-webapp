@@ -18,7 +18,7 @@ body {
     font-size: $f16;
     color: $text;
     line-height: 1.8;
-    background-color: $body-bg;
+    background-color: $white;
 }
 
 *:focus {
@@ -32,8 +32,8 @@ body {
     display: table;
 }
 
-.form-group {
-    width: 25%;
+.form-group, .btn-group {
+    width: 40%;
     float: $left;
     @include box-sizing(border-box);
     padding: 0 10px;
@@ -46,7 +46,10 @@ body {
     }
     label {
         font-size: $f12;
-        color: $text;        
+        color: $text;  
+        float: $right;    
+        text-align: $right;  
+        width: 50%;
     }
     button {
         background: $theme;
@@ -56,9 +59,14 @@ body {
         @include border-radius(3px);
         cursor: pointer;
         font-size: $f14;
+        width: 100%;
         &:hover {
             background-color: $text;
             color: $white;
         }
     }
+}
+
+.btn-group {
+    width: 20%;
 }
