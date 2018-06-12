@@ -21,7 +21,7 @@ class Search extends Component {
 
     searchTweets(event) {
         event.preventDefault();
-        let hashtags = this.refs.hashtags.value; //.trim()
+        let hashtags = this.refs.hashtags.value.trim();
         let hashtagArray = hashtags.split(" ");
         let searchValue = "";
         let hashInput = false;
@@ -112,14 +112,6 @@ class Search extends Component {
                             <label>Number of Tweets (Max: 100)</label>
                             <span className={`error ${this.state.numError} ? 'visible' : 'hide`}>{this.state.numMessage}</span>
                         </div>
-                        {/* <div className="form-group">
-                            <select className="form-control">
-                                <option value="mixed">Mixed</option>
-                                <option value="recent">Recent</option>
-                                <option value="popular">Popular</option>
-                            </select>
-                            <label>Type of Tweets</label>
-                        </div> */}
                         <div className="btn-group">
                             <button type="submit"><i className="fa fa-search" aria-hidden="true"></i>Search Tweets</button>
                         </div>
