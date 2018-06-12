@@ -19,6 +19,7 @@ module.exports = function(app) {
         console.log("req.query");
         console.log(req.query);
         client.get('search/tweets', {q: req.query.hashtags, count: req.query.number, tweet_mode:'extended'}, function(error, tweets, response) {
+            console.log(tweets);
             res.json(tweets);
         });      
     }
