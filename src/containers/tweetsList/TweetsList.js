@@ -7,31 +7,40 @@ import Tweet from '../tweet/Tweet';
 class TweetsList extends Component {
     sortTweets() {
         let sortValue = this.refs.sortValue.value;
-
-        if(sortValue === 'date') {
-            this.props.tweets.sort(function(a, b) {
-                return b.id - a.id;
-            });
-        } else if(sortValue === 'retweets') {
-            this.props.tweets.sort(function(a, b) {
-                return b.retweet_count - a.retweet_count;
-            });            
-        } else if(sortValue === 'favourites') {
-            this.props.tweets.sort(function(a, b) {
-                return b.favorite_count - a.favorite_count;
-            });
+        if(this.props.tweets.length > 0) {
+            this.sortTweetsBeforeRendering();
+        } else {
+            this.props.updateSortValue(sortValue);
         }
         
         this.props.sortTweets(this.props.tweets, sortValue);
     }
 
     renderTweets() {
+        this.sortTweetsBeforeRendering();
+
         if(this.props.tweets.length > 0) {
             return this.props.tweets.map((tweet, i) => {
                 return <Tweet tweet={tweet} value={i + 1} key={tweet.id} />
             })
         } else {
             return <p>No Tweets Found.</p>
+        }
+    }
+
+    sortTweetsBeforeRendering() {
+        if(this.props.sort === 'date') {
+            this.props.tweets.sort(function(a, b) {
+                return b.id - a.id;
+            });
+        } else if(this.props.sort === 'retweets') {
+            this.props.tweets.sort(function(a, b) {
+                return b.retweet_count - a.retweet_count;
+            });            
+        } else if(this.props.sort === 'favourites') {
+            this.props.tweets.sort(function(a, b) {
+                return b.favorite_count - a.favorite_count;
+            });
         }
     }
 

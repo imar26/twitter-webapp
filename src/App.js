@@ -37,7 +37,13 @@ class App extends Component {
     getTweets(tweetlist) {
         this.setState({
             tweets: tweetlist,
-            sort: 'date'
+            sort: this.state.sort || 'date'
+        });
+    }
+
+    updateSortValue(sortValue) {
+        this.setState({
+            sort: sortValue
         });
     }
 
@@ -47,7 +53,8 @@ class App extends Component {
             <div>
                 <Header/>
                 <Search getTweets={this.getTweets.bind(this)}/>
-                <TweetsList tweets={this.state.tweets} sortTweets={this.sortTweets.bind(this)} sort={this.state.sort} />
+                <TweetsList tweets={this.state.tweets} sortTweets={this.sortTweets.bind(this)} 
+                            sort={this.state.sort} updateSortValue={this.updateSortValue.bind(this)} />
                 <Footer/>
             </div>
         )
