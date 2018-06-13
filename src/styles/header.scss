@@ -21,3 +21,25 @@ header {
         color: $white;
     }
 }
+
+@media(max-width: 480px) {
+    header {
+        h3 {
+            font-size: $f18;
+        }
+        p {
+            font-size: $f12;
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    header {
+        h3 {
+            font-size: $f16;
+        }
+        p {
+            font-size: 11px;
+        }
+    }
+}

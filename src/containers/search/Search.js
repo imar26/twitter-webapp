@@ -21,6 +21,7 @@ class Search extends Component {
 
     searchTweets(event) {
         event.preventDefault();
+        // Remove head and trail spaces from the input
         let hashtags = this.refs.hashtags.value.trim();
         let hashtagArray = hashtags.split(" ");
         let searchValue = "";
