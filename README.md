@@ -3,7 +3,7 @@
 A simple webapp to display tweets with one or more hashtags
 
 ## Overview of the application
-* This web application allows user to enter multiple comma separated hashtags as an input
+* This web application allows user to enter multiple space separated hashtags as an input
 * The user can specify the number of tweets to display
 * The user can sort the tweets based on date, retweets count and favorites count
 
