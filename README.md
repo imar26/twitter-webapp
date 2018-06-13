@@ -42,6 +42,7 @@ npm start
 * Node.js
 * React JS
 * Express JS
+* Twitter API
 * REST API
 * SCSS
 
