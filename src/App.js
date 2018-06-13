@@ -1,11 +1,11 @@
 // Imports
 import React, { Component } from 'react';
 
-// Component Imports
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+// Presentational Component Imports
+import Header from './presentational/header/Header';
+import Footer from './presentational/footer/Footer';
 
-// Container Imports
+// Container Component Imports
 import Search from './containers/search/Search';
 import TweetsList from './containers/tweetsList/TweetsList';
 
@@ -25,7 +25,7 @@ class App extends Component {
         };
     }
 
-    // When tweets are sorted
+    // When tweets are sorted after user has clicked on the search button
     sortTweets(tweetlist, sort) {
         this.setState({
             tweets: tweetlist,
@@ -33,7 +33,8 @@ class App extends Component {
         });
     }
 
-    // When user requests for new tweets (changes the input field)
+    // When user requests for new tweets or changes the input values
+    // User can change the sort option before searching to display already sorted tweets
     getTweets(tweetlist) {
         this.setState({
             tweets: tweetlist,
@@ -41,6 +42,7 @@ class App extends Component {
         });
     }
 
+    // User changes the sort option before searching for the tweets
     updateSortValue(sortValue) {
         this.setState({
             sort: sortValue

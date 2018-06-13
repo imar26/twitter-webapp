@@ -4,10 +4,12 @@ import React, { Component } from 'react';
 // Import Services
 import SearchService from '../../services/SearchService';
 
+// Search Component
 class Search extends Component {
     constructor(props) {
         super(props);
 
+        // Define State
         this.state = {
             tweetLists: [],
             hashError: false,
@@ -16,13 +18,16 @@ class Search extends Component {
             numMessage: '',
         }
 
+        // Instance of singleton object
         this.searchService = SearchService.instance;
     }
 
+    // User clicks on Search Tweets button
     searchTweets(event) {
         event.preventDefault();
         // Remove head and trail spaces from the input
         let hashtags = this.refs.hashtags.value.trim();
+        // Convert this String input into an Array
         let hashtagArray = hashtags.split(" ");
         let searchValue = "";
         let hashInput = false;
@@ -43,10 +48,11 @@ class Search extends Component {
                 // If it is the last hashtag, do not append 'OR' at the end
                 searchValue += hashtagArray[i];
             } else {
-                // Add all the hashtags from the input
+                // Add all the hashtags from the input array
                 searchValue += hashtagArray[i] + ' OR ';
             }
 
+            // If there are any errors related to the hashtag input
             if(hashInput === true) {
                 this.setState({
                     hashError: true,
@@ -64,7 +70,9 @@ class Search extends Component {
             }
         }
 
+        // If there are any errors related to the number of tweets input
         let number = this.refs.number.value;
+        // Only accept numbers
         if(number.replace(/[^\d.-]/g,'') < 1 || number.replace(/[^\d.-]/g,'') > 100) {
             this.setState({
                 numError: true,
@@ -81,21 +89,25 @@ class Search extends Component {
             return false;
         }
         
+        // Create JSON Object
         let data = {
             hashtags: searchValue,
             number: number
         }
 
+        // Make a request and get tweets based on the input
         this.searchService.searchTweets(data)
             .then((response) => {           
                 this.setState({
                     tweetLists: response
                 });
 
+                // Pass on the tweets to the parent component to update the state
                 this.props.getTweets(this.state.tweetLists);
             });                            
     }
 
+    // Render Search Form on the UI
     render() {
         return(
             <section id="search-section">

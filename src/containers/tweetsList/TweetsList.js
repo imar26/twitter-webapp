@@ -4,21 +4,30 @@ import React, { Component } from 'react';
 // Import Containers
 import Tweet from '../tweet/Tweet';
 
+
+// TweetsList Component
 class TweetsList extends Component {
+    // Function called when user sorts tweets after they are displayed
     sortTweets() {
         let sortValue = this.refs.sortValue.value;
+        // Check if tweets are already displayed
         if(this.props.tweets.length > 0) {
             this.sortTweetsBeforeRendering();
         } else {
+            // If user just changes the sort value before searching for the tweets
             this.props.updateSortValue(sortValue);
         }
         
+        // Pass tweets and sort value to parent component to update the state
         this.props.sortTweets(this.props.tweets, sortValue);
     }
 
+    // Function to display tweets
     renderTweets() {
+        // Sort tweets before displaying if the user has specified the sort metric
         this.sortTweetsBeforeRendering();
 
+        // Check if tweets array is not empty
         if(this.props.tweets.length > 0) {
             return this.props.tweets.map((tweet, i) => {
                 return <Tweet tweet={tweet} value={i + 1} key={tweet.id} />
@@ -28,6 +37,7 @@ class TweetsList extends Component {
         }
     }
 
+    // Function to sort tweets based on the sort value
     sortTweetsBeforeRendering() {
         if(this.props.sort === 'date') {
             this.props.tweets.sort(function(a, b) {
@@ -44,6 +54,7 @@ class TweetsList extends Component {
         }
     }
 
+    // Display Tweets on the UI
     render() {
         return(
             <section id="tweets-section">
