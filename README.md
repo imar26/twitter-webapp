@@ -1,6 +1,6 @@
 # Twitter Webapp 
 
-A simple webapp to display tweets with one or more hashtags
+A simple responsive webapp to display tweets with one or more hashtags
 
 ## Overview of the application
 * This web application allows user to enter multiple space separated hashtags as an input

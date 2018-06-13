@@ -10,8 +10,6 @@ class Tweet extends Component {
     constructor(props) {
         super(props);
 
-        console.log(this.props.tweet);
-
         // Check if the tweet is not a retweet
         if(this.props.tweet.retweeted_status === undefined) {            
             // Display normal tweet
